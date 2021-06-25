@@ -2,7 +2,7 @@ from abc import *
 from dataclasses import dataclass
 import json
 import pandas as pd
-import googledmaps
+import googlemaps
 from pandas.io.sas.sasreader import ReaderBase
 
 
@@ -29,54 +29,57 @@ class ReaderBase(metaclass=ABCMeta):
     def json(self):
         pass
 
-    @dataclass  # 은닉화
-    class FileDTO(object):
-        context: str
-        fname: str
-        dframe: object
+@dataclass # 은닉화
+class FileDTO(object):
 
-        @property
-        def context(self) -> str: return self._context
+    context: str
+    fname: str
+    dframe: object
 
-        @context.setter
-        def context(self, context):
-            self._context = context
 
-        @property
-        def fname(self) -> str: return self._fname
+    @property
+    def context(self) -> str: return self._context
 
-        @fname.setter
-        def fname(self, fname): self._fname = fname
+    @context.setter
+    def context(self, context):
+        self._context = context
 
-        @property
-        def dframe(self) -> object: return self._dframe
+    @property
+    def fname(self) -> str: return self._fname
 
-        @dframe.setter
-        def dframe(self, dframe): self._dframe = dframe
+    @fname.setter
+    def fname(self, fname): self._fname = fname
 
-    class Printer(PrinterBase):
+    @property
+    def dframe(self) -> object: return self._dframe
 
-        def dframe(self, this):
-            print('*' * 100)
-            print(f'1. Target type \n {type(this)} ')
-            print(f'2. Target column \n {this.columns} ')
-            print(f'3. Target 상위 1개 행\n {this.head()} ')
-            print(f'4. Target null 의 갯수\n {this.isnull().sum()}개')
-            print('*' * 100)
+    @dframe.setter
+    def dframe(self, dframe): self._dframe = dframe
 
-    class Reader(ReaderBase):
+class Printer(PrinterBase):
 
-        def new_file(self, file) -> str:
-            return file.context + file.fname
+    def dframe(self, this):
+        print('*' * 100)
+        print(f'1. Target type \n {type(this)} ')
+        print(f'2. Target column \n {this.columns} ')
+        print(f'3. Target 상위 1개 행\n {this.head()} ')
+        print(f'4. Target null 의 갯수\n {this.isnull().sum()}개')
+        print('*' * 100)
 
-        def csv(self, file) -> object:
-            return pd.read_csv(f'{self.new_file(file)}.csv', encoding='UTF-8', thousands=',')
 
-        def xls(self, file, header, usecols) -> object:
-            return pd.read_excel(f'{self.new_file(file)}.xls', header=header, usecols=usecols)
+class Reader(ReaderBase):
 
-        def json(self, file) -> object:
-            return json.load(open(f'{self.new_file(file)}.json', encoding='UTF-8'))
+    def new_file(self, file) -> str:
+        return file.context + file.fname
 
-        def gmaps(self) -> object:
-            return googlemaps.Client(key='')
+    def csv(self, file) -> object:
+        return pd.read_csv(f'{self.new_file(file)}.csv', encoding='UTF-8', thousands=',')
+
+    def xls(self, file, header, usecols) -> object:
+        return pd.read_excel(f'{self.new_file(file)}.xls', header=header, usecols=usecols)
+
+    def json(self, file) -> object:
+        return json.load(open(f'{self.new_file(file)}.json', encoding='UTF-8'))
+
+    def gmaps(self) -> object:
+        return googlemaps.Client(key='')
