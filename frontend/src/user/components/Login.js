@@ -1,7 +1,10 @@
 import React from 'react'
+
 const Login = () => {
     return (<>
     <h2>Login Form</h2>
+
+    
 
 <form action="/action_page.php" method="post">
   <div className="imgcontainer">

@@ -1,7 +1,11 @@
 import React,{useState} from 'react'
 import './Signup.css'
 import { Button } from '@material-ui/core';
+import { userLogin } from 'api';
+import { userSignup } from 'api'
+import { useHistory } from 'react-router'
 const SignUp = () => {
+  const history = useHistory()
   const [userInfo, setUserInfo] = useState({
     username: '',
     password: '',
@@ -9,7 +13,37 @@ const SignUp = () => {
     email: ''
   })
 
-  const {username, password, name, email} = userInfo
+  const {username, password, name, email} = `userInfo`
+
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    let handleErrors = response => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response;
+    }
+    alert(`전송 클릭: ${JSON.stringify({...userInfo})}`)
+    userSignup({...userInfo})
+    .then(res => {
+      alert(`회원가입 완료 : ${res.data.result} `)
+      // history.push('login')
+      
+    })
+    .catch(err => {
+      alert(`회원가입 실패 : ${err} `)
+
+    })
+
+
+
+  }
+
+  const handleClick = e => {
+    e.preventDefault()
+    alert('취소 클릭')
+  }
 
   const handleChange = e => {
     const { name, value } = e.target
@@ -20,15 +54,6 @@ const SignUp = () => {
 
   }
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    alert(`전송 클릭: ${JSON.stringify({...userInfo})}`)
-  }
-
-  const handleClick = e => {
-    e.preventDefault()
-    alert('취소 클릭')
-  }
 
     return (<>
     <div className="Signup">
