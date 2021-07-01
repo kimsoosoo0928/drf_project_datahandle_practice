@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="432d80d4-675d-47d8-9076-d36cc0ab01ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/board/container/PostList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/board/container/PostWrite.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/board/container/PostWrite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/board/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/board/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/Menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/Nav.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/Nav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/Item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/Stock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/Stock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/User.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/components/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/components/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/components/UserDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/components/UserEdit.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/components/UserList.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/components/UserList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/container/Signup.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/container/Signup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/user/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1uhXIwIgzfMeqqh4F8cN0tLDNHs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="432d80d4-675d-47d8-9076-d36cc0ab01ca" name="Default Changelist" comment="" />
+      <created>1625118722562</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1625118722562</updated>
+      <workItem from="1625118726289" duration="7000" />
+    </task>
+    <servers />
+  </component>
+</project>

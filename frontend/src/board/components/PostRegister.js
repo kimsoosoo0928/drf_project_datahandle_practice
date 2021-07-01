@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
-import './PostWrite.css'
+import '../styles/PostRegister.css'
 import { Button } from '@material-ui/core';
-import { userPostWrite } from 'api';
+
 
 const PostWrite = () => {
     
@@ -25,7 +25,8 @@ const PostWrite = () => {
           return response;
         }
         alert(`작성 클릭: ${JSON.stringify({...post})}`)
-        userPostWrite({...post})
+          PostWrite({...post})
+        
         .then(res => {
           alert(`게시물 작성 완료 : ${res.data.result} `)
           // history.push('login')

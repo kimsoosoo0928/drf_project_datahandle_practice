@@ -1,6 +1,8 @@
 import React from 'react'
+import '../styles/MemberDetail.css'
 
-const UserDetail = () => {
+
+const MemberDetail = () => {
     return (<>
  
         
@@ -16,4 +18,4 @@ const UserDetail = () => {
       </>)
 }
 
-export default UserDetail
+export default MemberDetail

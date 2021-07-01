@@ -1,5 +1,5 @@
 import React from 'react'
-import { UserMenu as Menu } from '../common'
+import { ItemMenu as Menu } from '../common'
 import './table.style.css'
 
 const Item = ({children}) => (<>
