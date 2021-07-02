@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Pagination from '@material-ui/lab/Pagination';
 import { memberList } from 'api'
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
   table: {
@@ -36,7 +37,7 @@ const MemberList = () => {
   useEffect(() => {
     memberList()
     .then(res => {
-        console.log(res.data)
+      console.log(PropTypes.res.data)
         setMembers(res.data)
     })
     .catch(err => {
@@ -57,7 +58,7 @@ const MemberList = () => {
         </TableHead>
         <TableBody>
           { members.length != 0
-           ? members.map((member) => {
+           ? members.map((member) => (
                <TableRow key={member.username}>
                <TableCell component="th" scope="row">
                {member.password}
@@ -65,7 +66,7 @@ const MemberList = () => {
                <TableCell align="right">{member.name}</TableCell>
                <TableCell align="right">{member.email}</TableCell>
            </TableRow>
-          })
+           ))
           :  <TableRow>
           <TableCell component="th" scope="row" colSpan="4">
              <h1>등록된 데이터가 없습니다</h1>

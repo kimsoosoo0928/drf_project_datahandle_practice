@@ -8,7 +8,7 @@ from icecream import ic
 
 
 
-@api_view(['GET', 'POST', 'DELETE'])
+@api_view(['GET', 'POST', 'DELETE']) #
 @parser_classes([JSONParser])
 def members(request):
     print('=== 여기까지는 왔다 !! ')
@@ -16,8 +16,10 @@ def members(request):
         all_members = MemberVO.objects.all()
         ic(type(all_members))
         serializer = MemberSerializer(all_members, many=True)
-        ic(type())
+        print('=== 여기도 왔다 !!')
+        ic(type(serializer.data))
         return JsonResponse(serializer.data, safe=False)
+
     elif request.method == 'POST':
         new_member = request.data['body']
         ic(new_member)
