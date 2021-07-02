@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/MemberDetail.css'
 
-
 const MemberDetail = () => {
     return (<>
  

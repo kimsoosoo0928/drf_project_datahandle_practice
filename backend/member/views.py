@@ -1,5 +1,6 @@
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
+from rest_framework.response import Response
 from rest_framework import status
 from member.models import MemberVO
 from member.serializers import MemberSerializer
@@ -7,18 +8,20 @@ from rest_framework.decorators import api_view, parser_classes
 from icecream import ic
 
 
-
-@api_view(['GET', 'POST', 'DELETE']) #
+@api_view(['GET', 'POST', 'DELETE'])
 @parser_classes([JSONParser])
 def members(request):
-    print('=== 여기까지는 왔다 !! ')
+    print('===1=== ')
     if request.method == 'GET':
         all_members = MemberVO.objects.all()
         ic(type(all_members))
+        print('===2===')
         serializer = MemberSerializer(all_members, many=True)
-        print('=== 여기도 왔다 !!')
-        ic(type(serializer.data))
-        return JsonResponse(serializer.data, safe=False)
+        ic(serializer)
+        print('===3=== ')
+        ic(serializer.data)
+        return JsonResponse(data=serializer.data, safe=False)
+
 
     elif request.method == 'POST':
         new_member = request.data['body']
@@ -26,7 +29,7 @@ def members(request):
         serializer = MemberSerializer(data = new_member)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
+            return JsonResponse({'result':f'Welcome, {serializer.data.get("name")}'}, status=201)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'DELETE':
         serializer = MemberSerializer()

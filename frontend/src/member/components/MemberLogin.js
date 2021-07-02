@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/MemberLogin.css'
 
-
 const MemberLogin = () => {
     return (<>
     <h2>Login Form</h2>

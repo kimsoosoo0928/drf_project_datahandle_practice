@@ -9,7 +9,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Pagination from '@material-ui/lab/Pagination';
 import { memberList } from 'api'
-import PropTypes from 'prop-types';
+
+
 
 const useStyles = makeStyles({
   table: {
@@ -37,7 +38,6 @@ const MemberList = () => {
   useEffect(() => {
     memberList()
     .then(res => {
-      console.log(PropTypes.res.data)
         setMembers(res.data)
     })
     .catch(err => {
@@ -60,13 +60,12 @@ const MemberList = () => {
           { members.length != 0
            ? members.map((member) => (
                <TableRow key={member.username}>
-               <TableCell component="th" scope="row">
-               {member.password}
-               </TableCell>
-               <TableCell align="right">{member.name}</TableCell>
-               <TableCell align="right">{member.email}</TableCell>
-           </TableRow>
-           ))
+                 <TableCell align="right">{member.username}</TableCell>
+                <TableCell component="th" scope="row">{member.password}</TableCell>
+                <TableCell align="right">{member.name}</TableCell>
+                <TableCell align="right">{member.email}</TableCell>
+            </TableRow>)
+          )
           :  <TableRow>
           <TableCell component="th" scope="row" colSpan="4">
              <h1>등록된 데이터가 없습니다</h1>
@@ -78,12 +77,20 @@ const MemberList = () => {
       </Table>
     </TableContainer>
     <div className={pageClasses.root}>
-        <Pagination count={10} />
         <Pagination count={10} color="primary" />
-        <Pagination count={10} color="secondary" />
-        <Pagination count={10} disabled />
     </div>
     </>);
 }
 
 export default MemberList
+
+/*
+ <TableRow key={row.name}>
+    <TableCell component="th" scope="row">
+    {row.name}
+    </TableCell>
+    <TableCell align="right">{row.calories}</TableCell>
+    <TableCell align="right">{row.fat}</TableCell>
+    <TableCell align="right">{row.carbs}</TableCell>
+</TableRow>
+*/
