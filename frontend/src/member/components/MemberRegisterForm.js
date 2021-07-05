@@ -2,7 +2,8 @@ import React,{useState} from 'react'
 import '../styles/MemberRegister.css'
 import { memberRegister } from 'api'
 import { useHistory } from 'react-router'
-const MemberRegister = () => {
+
+const MemberRegisterForm = () => {
   const history = useHistory()
   const [memberInfo, setMemberInfo] = useState({
     username: '',
@@ -20,7 +21,7 @@ const MemberRegister = () => {
     memberRegister({...memberInfo})
     .then(res => {
       alert(`회원가입 완료 : ${res.data.result} `)
-      // history.push('login')
+      history.push('login')
       
     })
     .catch(err => {
@@ -80,4 +81,4 @@ const MemberRegister = () => {
 </>)
 }
 
-export default MemberRegister
+export default MemberRegisterForm
